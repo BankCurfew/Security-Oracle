@@ -14,7 +14,7 @@
 | C1 | insurance-chat unauth access | ✅ PASS | Bearer JWT auth check added |
 | C2 | jspdf XSS via innerHTML | ✅ PASS | Upgraded to v4.2.1 (CVE patched) |
 | C3 | parse-fund-peer-avg unauth DB write | ❌ FAIL | No auth check — anyone can write to DB |
-| C4 | Supabase anon key in git history | ✅ PASS* | .env removed from git; key rotation needed on Supabase dashboard |
+| C4 | Supabase anon key in git history | ✅ ACCEPTED | .env removed from git; Loveable manages Supabase — rotation out of scope |
 
 ## HIGH Items (9)
 
@@ -67,4 +67,6 @@
 
 ### แบงค์ Action Required
 
-- Rotate Supabase anon key for project `rugcuukelivcferjjzek`
+- ~~Rotate Supabase anon key~~ — DROPPED (Loveable manages Supabase, out of our control)
+- PII removal in Data-Oracle (125+ customer records) — needs approval
+- HTTPS setup for vuttihome.thddns.net services
