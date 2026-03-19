@@ -535,12 +535,12 @@ This was the defining day. 9 oracles working in parallel on a live production de
 
 | Severity | Repo | What | Commit |
 |----------|------|------|--------|
-| 🔴 CRITICAL | AIA-Knowledge | Plaintext password `@Bankie6533` + email in docs | `c885427`, `9bc2976` (now PATCHED in `4ee97c0`) |
+| 🔴 CRITICAL | AIA-Knowledge | Plaintext password `[REDACTED]` + email in docs | `c885427`, `9bc2976` (now PATCHED in `4ee97c0`) |
 | 🔴 CRITICAL | Admin-Oracle | `.env` tracked in git — LINE_CHANNEL_SECRET, SUPABASE_SERVICE_KEY, ANTHROPIC_API_KEY, FA_TOOLS_API_KEY | Multiple commits |
 | 🔴 CRITICAL | Dev-Oracle | `.env` tracked in git — SUPABASE_SERVICE_KEY, GEMINI_API_KEY | Multiple commits |
 | 🔴 CRITICAL | Infrastructure | MAW server port 3456 has ZERO authentication — unauthenticated command execution | Architecture issue |
 | 🟡 HIGH | feed.log | Customer PII: name + phone + DOB + health + province in plaintext | Infrastructure issue |
-| 🟡 HIGH | feed.log | Password `@Bankie6533` broadcast via maw-hey — 5+ entries | Infrastructure issue |
+| 🟡 HIGH | feed.log | Password `[REDACTED]` broadcast via maw-hey — 5+ entries | Infrastructure issue |
 | 🟡 HIGH | DocCon-Oracle | Real customer names + policy numbers in CLAUDE_email.md | `CLAUDE_email.md` |
 | 🟡 HIGH | Admin-Oracle | `/test` endpoint bypasses LINE signature verification — LIVE | `bot.ts` line 367–389 |
 | 🟡 HIGH | Infrastructure | Cloudflare Quick Tunnel — random URL, no access control | Runtime |
@@ -628,7 +628,7 @@ The risk surface grew with the team:
 
 1. **Speed is the enemy of security**: The Jarvis sprint (Mar 16–17) moved at extreme velocity — 115+ commits in 48 hours. Security was not in scope. Standard practice when moving fast.
 
-2. **Credentials spread faster than expected**: Password `@Bankie6533` appears in git history (AIA-Knowledge), feed.log (5+ times), maw-log.jsonl — password rotation alone is insufficient. Need policy: credentials never via any oracle comms channel.
+2. **Credentials spread faster than expected**: Password `[REDACTED]` appears in git history (AIA-Knowledge), feed.log (5+ times), maw-log.jsonl — password rotation alone is insufficient. Need policy: credentials never via any oracle comms channel.
 
 3. **LAW propagation works**: When BoB adds a rule, all 17 repos get updated within hours. This is the enforcement mechanism. Security policies should go through THE LAW.
 
