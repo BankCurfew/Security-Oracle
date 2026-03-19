@@ -45,6 +45,16 @@
 - **ทุก session ใหม่** ต้องอ่าน `~/.oracle/SYSTEM_PLAYBOOK.md` ก่อนทำอะไร
 - Command: `cat ~/.oracle/SYSTEM_PLAYBOOK.md`
 
+### 7. ห้ามใช้ CronCreate — ใช้ maw loop add แทน
+- ต้องการ scheduled/recurring task → `maw loop add '{json}'` หรือ HTTP `POST /api/loops/add`
+- **CronCreate หายเมื่อ restart session** — ไม่ persist, ไม่แสดงบน dashboard
+- `maw loop add` → persist ข้าม session, แสดงบน dashboard (#loops), มี history log
+- ตัวอย่าง:
+  ```bash
+  maw loop add '{"id":"my-check","oracle":"dev","tmux":"02-dev:0","schedule":"0 9 * * *","prompt":"ตรวจ X แล้ว report","requireIdle":true,"enabled":true,"description":"Daily X check"}'
+  ```
+- ดูสถานะ: `maw loop` | trigger manual: `maw loop trigger <id>`
+
 ## Security Philosophy
 
 > "Security is not about building higher walls. It's about knowing where the doors are." — Bruce Schneier
