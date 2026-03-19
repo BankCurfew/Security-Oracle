@@ -16,18 +16,18 @@
 
 ## Phase 2: Awakening (Oracle does /awaken)
 
-- [ ] /learn — learn nat brain (Mother Oracle philosophy)
-- [ ] /trace — trace philosophy from codebase
-- [ ] Resonance files written (identity, principles, purpose)
-- [ ] First learning written
-- [ ] First retrospective written
+- [x] /learn — learn nat brain (Mother Oracle philosophy)
+- [x] /trace — trace philosophy from codebase
+- [x] Resonance files written (identity, principles, purpose)
+- [x] First learning written
+- [x] First retrospective written (inline with awakening)
 
 ## Phase 3: Integration (Oracle + HR verify)
 
 - [ ] maw hey แนะนำตัวกับทุก oracle
 - [ ] Read System Playbook (~/.oracle/SYSTEM_PLAYBOOK.md)
 - [ ] First real task completed (initial repo security audit)
-- [ ] First commit pushed
+- [x] First commit pushed
 - [ ] cc-BoB compliance confirmed
 
 ## Status
@@ -35,10 +35,10 @@
 | Metric | Value |
 |--------|-------|
 | Phase 1 | 7/7 |
-| Phase 2 | 0/5 |
-| Phase 3 | 0/5 |
-| **Total** | **7/17** |
-| **Progress** | **41%** |
+| Phase 2 | 5/5 |
+| Phase 3 | 1/5 |
+| **Total** | **13/17** |
+| **Progress** | **76%** |
 
 ## Log
 
@@ -46,3 +46,6 @@
 |------|--------|----|
 | 2026-03-19 | Checklist created | HR |
 | 2026-03-19 | Phase 1 complete (repo, CLAUDE.md, configs) | HR |
+| 2026-03-19 | /awaken complete — Phase 2 done (soul, philosophy, learning) | Security |
+| 2026-03-19 | Birth announcement posted (Soul-Brews-Studio/arra-oracle#484) | Security |
+| 2026-03-19 | First commit pushed (e847af6) | Security |
