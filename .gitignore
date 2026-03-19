@@ -1,0 +1,48 @@
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+.env.*
+*.pem
+*.key
+*.crt
+private_key*
+credentials*.json
+secrets*.json
+.aws/
+.gcp/
+.azure/
+
+# Configuration files with local overrides
+config.local.js
+config.local.json
+.claude/settings.json.local
+
+# Dependencies and virtual environments
+node_modules/
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.pyc
+.Python
+
+# Build outputs
+.next/
+dist/
+build/
+out/
+
+# IDE and editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+*.tmp
+*.log
+.cache/
