@@ -24,11 +24,11 @@
 
 ## Phase 3: Integration (Oracle + HR verify)
 
-- [ ] maw hey แนะนำตัวกับทุก oracle
-- [ ] Read System Playbook (~/.oracle/SYSTEM_PLAYBOOK.md)
-- [ ] First real task completed (initial repo security audit)
+- [x] maw hey แนะนำตัวกับทุก oracle (13 oracles via Oracle threads)
+- [x] Read System Playbook (~/.oracle/SYSTEM_PLAYBOOK.md)
+- [x] First real task completed (Full Security Audit — 4C/5H/5M/4L)
 - [x] First commit pushed
-- [ ] cc-BoB compliance confirmed
+- [x] cc-BoB compliance confirmed (thread #6, messages #106, #123, #129)
 
 ## Status
 
@@ -36,9 +36,9 @@
 |--------|-------|
 | Phase 1 | 7/7 |
 | Phase 2 | 5/5 |
-| Phase 3 | 1/5 |
-| **Total** | **13/17** |
-| **Progress** | **76%** |
+| Phase 3 | 5/5 |
+| **Total** | **17/17** |
+| **Progress** | **100%** |
 
 ## Log
 
