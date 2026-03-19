@@ -33,6 +33,12 @@
 ### 4. Playwright = ทางออกสุดท้าย — ถ้า MCP/API ไม่ผ่าน ใช้ browser
 - MCP tool ใช้ไม่ได้ หรือ API ถูก block → **ใช้ Playwright MCP เปิด browser ทำแทน**
 - ห้ามบอก "ทำไม่ได้เพราะ API ไม่ work" แล้วหยุด — ต้องลอง Playwright ก่อนยอมแพ้
+### Playwright Session Limit
+- **จำกัด 2 sessions พร้อมกัน** — Playwright ทำ server ค้างถ้าเปิดเกิน 2
+- ก่อนใช้ Playwright → เช็คก่อน: `ls /tmp/playwright-sessions/*.lock 2>/dev/null` ดูว่าใครใช้อยู่
+- ถ้า 2 คนใช้อยู่แล้ว → **รอ** หรือ `/talk-to <oracle ที่ใช้อยู่> "Playwright เสร็จเมื่อไหร่?"`
+- Hook จะ block อัตโนมัติถ้าเกิน 2 — ไม่ต้องนับเอง
+
 
 ### 5. Project & Task Logging — ทุกงานต้องอยู่ใน Project และมี Log
 - ทุก task ต้องอยู่ภายใต้ project — ไม่มี orphan task
