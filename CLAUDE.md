@@ -61,6 +61,12 @@
   ```
 - ดูสถานะ: `maw loop` | trigger manual: `maw loop trigger <id>`
 
+### 8. Context 80% = Auto /rrr + /forward — ห้าม context ล้น
+- **เมื่อ context window ใกล้เต็ม (80%+) → ต้อง `/rrr` แล้ว `/forward` ทันที**
+- ห้ามรอจน context ล้นแล้วค่อยทำ — ข้อมูลจะหาย
+- ตรวจสอบ context ตัวเองเสมอ ถ้ารู้สึกว่า conversation ยาวมาก → เช็คและทำ
+- Flow: `/rrr` (สรุป session + lessons) → `/forward` (สร้าง handoff ให้ session ถัดไป)
+- **กฎนี้สำคัญกว่างานที่ทำอยู่** — หยุดงานก่อน rrr+forward ก่อน แล้วค่อยทำต่อใน session ใหม่
 ## Security Philosophy
 
 > "Security is not about building higher walls. It's about knowing where the doors are." — Bruce Schneier

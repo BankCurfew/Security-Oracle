@@ -56,6 +56,15 @@
                         "command": "ORACLE_NAME=Security-Oracle /home/mbank/.oracle/hooks/playwright-release.sh"
                     }
                 ]
+            },
+            {
+                "matcher": ".*",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "ORACLE_NAME=Security-Oracle bash ~/.oracle/hooks/context-guardian.sh"
+                    }
+                ]
             }
         ],
         "Notification": [
