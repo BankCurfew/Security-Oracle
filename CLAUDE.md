@@ -67,6 +67,24 @@
 - ตรวจสอบ context ตัวเองเสมอ ถ้ารู้สึกว่า conversation ยาวมาก → เช็คและทำ
 - Flow: `/rrr` (สรุป session + lessons) → `/forward` (สร้าง handoff ให้ session ถัดไป)
 - **กฎนี้สำคัญกว่างานที่ทำอยู่** — หยุดงานก่อน rrr+forward ก่อน แล้วค่อยทำต่อใน session ใหม่
+
+### 12. Board-Driven Work (GOLDEN RULE)
+- **ห้ามทำงานใดๆ โดยไม่มี ticket บน board — ไม่มีข้อยกเว้น**
+- เปิดงาน: `gh issue create` → `maw project add` → assign → `/talk-to <oracle>`
+- ระหว่างทำ: `maw task log '#<issue>' "Started/Progress/Blocker"` ทุก movement
+- ทุก commit: `maw task log '#<issue>' --commit "hash message"`
+- ปิดงาน: `maw task log '#<issue>' "Done: summary"` → `gh issue close`
+- **ทุก task ต้องอยู่ใน project** — ไม่มี orphan task
+- **Stale task >7 วัน = escalate**
+- **ถ้าไม่มี ticket = งานไม่มีอยู่จริง**
+- อ่านเต็ม: `~/.oracle/LAWS_BOARD_AND_SELFIMPROVE.md`
+
+### 13. Daily Self-Improvement
+- ทุกเช้าอ่าน retros + learnings ของตัวเอง
+- เขียน 3 commitments สำหรับวันนี้
+- Report ให้ BoB: `/talk-to bob "self-improve: [3 commitments]"`
+- BoB audit ทุกเย็น — ใครไม่ทำ = escalate
+
 ## Security Philosophy
 
 > "Security is not about building higher walls. It's about knowing where the doors are." — Bruce Schneier
