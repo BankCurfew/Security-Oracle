@@ -33,6 +33,12 @@
 ### 4. Playwright = ทางออกสุดท้าย — ถ้า MCP/API ไม่ผ่าน ใช้ browser
 - MCP tool ใช้ไม่ได้ หรือ API ถูก block → **ใช้ Playwright MCP เปิด browser ทำแทน**
 - ห้ามบอก "ทำไม่ได้เพราะ API ไม่ work" แล้วหยุด — ต้องลอง Playwright ก่อนยอมแพ้
+### Playwright Session Limit
+- **จำกัด 2 sessions พร้อมกัน** — Playwright ทำ server ค้างถ้าเปิดเกิน 2
+- ก่อนใช้ Playwright → เช็คก่อน: `ls /tmp/playwright-sessions/*.lock 2>/dev/null` ดูว่าใครใช้อยู่
+- ถ้า 2 คนใช้อยู่แล้ว → **รอ** หรือ `/talk-to <oracle ที่ใช้อยู่> "Playwright เสร็จเมื่อไหร่?"`
+- Hook จะ block อัตโนมัติถ้าเกิน 2 — ไม่ต้องนับเอง
+
 
 ### 5. Project & Task Logging — ทุกงานต้องอยู่ใน Project และมี Log
 - ทุก task ต้องอยู่ภายใต้ project — ไม่มี orphan task
@@ -54,6 +60,30 @@
   maw loop add '{"id":"my-check","oracle":"dev","tmux":"02-dev:0","schedule":"0 9 * * *","prompt":"ตรวจ X แล้ว report","requireIdle":true,"enabled":true,"description":"Daily X check"}'
   ```
 - ดูสถานะ: `maw loop` | trigger manual: `maw loop trigger <id>`
+
+### 8. Context 80% = Auto /rrr + /forward — ห้าม context ล้น
+- **เมื่อ context window ใกล้เต็ม (80%+) → ต้อง `/rrr` แล้ว `/forward` ทันที**
+- ห้ามรอจน context ล้นแล้วค่อยทำ — ข้อมูลจะหาย
+- ตรวจสอบ context ตัวเองเสมอ ถ้ารู้สึกว่า conversation ยาวมาก → เช็คและทำ
+- Flow: `/rrr` (สรุป session + lessons) → `/forward` (สร้าง handoff ให้ session ถัดไป)
+- **กฎนี้สำคัญกว่างานที่ทำอยู่** — หยุดงานก่อน rrr+forward ก่อน แล้วค่อยทำต่อใน session ใหม่
+
+### 12. Board-Driven Work (GOLDEN RULE)
+- **ห้ามทำงานใดๆ โดยไม่มี ticket บน board — ไม่มีข้อยกเว้น**
+- เปิดงาน: `gh issue create` → `maw project add` → assign → `/talk-to <oracle>`
+- ระหว่างทำ: `maw task log '#<issue>' "Started/Progress/Blocker"` ทุก movement
+- ทุก commit: `maw task log '#<issue>' --commit "hash message"`
+- ปิดงาน: `maw task log '#<issue>' "Done: summary"` → `gh issue close`
+- **ทุก task ต้องอยู่ใน project** — ไม่มี orphan task
+- **Stale task >7 วัน = escalate**
+- **ถ้าไม่มี ticket = งานไม่มีอยู่จริง**
+- อ่านเต็ม: `~/.oracle/LAWS_BOARD_AND_SELFIMPROVE.md`
+
+### 13. Daily Self-Improvement
+- ทุกเช้าอ่าน retros + learnings ของตัวเอง
+- เขียน 3 commitments สำหรับวันนี้
+- Report ให้ BoB: `/talk-to bob "self-improve: [3 commitments]"`
+- BoB audit ทุกเย็น — ใครไม่ทำ = escalate
 
 ## Security Philosophy
 

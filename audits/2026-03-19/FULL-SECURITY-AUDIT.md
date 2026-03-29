@@ -26,7 +26,7 @@ The biggest risks are: (1) plaintext password in git history, (2) MAW server wit
 
 ### C1: Plaintext Password in Git History — AIA-Knowledge
 - **Files**: `fa-tools/api-spec.md`, `technical/jarvis-api-documentation.md`
-- **Content**: `"password": "@Bankie6533"` + `"email": "bankvuttipipat@gmail.com"`
+- **Content**: `"password": "[REDACTED]"` + `"email": "[REDACTED]"` (see commits for original values)
 - **Commits**: `c885427`, `9bc2976`
 - **Risk**: Even though repo is private, credentials in git history are permanent
 - **Action**: Rotate password immediately → Remove from files → `git filter-repo` to purge history
@@ -39,7 +39,7 @@ The biggest risks are: (1) plaintext password in git history, (2) MAW server wit
 
 ### C3: Password Broadcast via feed.log / maw-hey
 - **File**: `~/.oracle/feed.log` (52,227 lines, 10MB)
-- **Content**: Password `@Bankie6533` appears in 5+ entries — sent via `maw hey` from BoB to Dev and Researcher
+- **Content**: Password `[REDACTED]` appears in 5+ entries — sent via `maw hey` from BoB to Dev and Researcher
 - **Also in**: `~/.oracle/maw-log.jsonl` (5 matches)
 - **Action**: Rotate password → Sanitize logs → **Policy: credentials NEVER via maw-hey/talk-to**
 
